@@ -1,0 +1,104 @@
+{
+    "cources": [
+        {
+            "id": 1,
+            "title": "Guitar Fundamentals",
+            "slug": "guitar-fundamentals",
+            "description": "Learn the basics of playing guitar with our comprehensive beginner's course",
+            "price": 99.99,
+            "instructor": "John Doe",
+            "isFeatured": true,
+            "image": "/cources/guitar.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Piano Essentials",
+            "slug": "piano-essentials",
+            "description": "Master the fundamentals of piano playing in this essential course",
+            "price": 89.99,
+            "instructor": "Jane Smith",
+            "isFeatured": true,
+            "image": "/cources/piano.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Photography Basics",
+            "slug": "photography-basics",
+            "description": "Start your photography journey with this beginner's guide",
+            "price": 79.99,
+            "instructor": "Robert Brown",
+            "isFeatured": false,
+            "image": "/cources/photography.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Yoga for Beginners",
+            "slug": "yoga-for-beginners",
+            "description": "Learn the fundamentals of yoga and improve your flexibility and strength",
+            "price": 59.99,
+            "instructor": "Emily Davis",
+            "isFeatured": true,
+            "image": "/cources/yoga.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Web Development",
+            "slug": "web-development",
+            "description": "Become a web developer by learning HTML, CSS, and JavaScript",
+            "price": 199.99,
+            "instructor": "Michael Wilson",
+            "isFeatured": true,
+            "image": "/cources/web-development.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Digital Marketing",
+            "slug": "digital-marketing",
+            "description": "Learn the strategies of successful digital marketing",
+            "price": 129.99,
+            "instructor": "Sarah Johnson",
+            "isFeatured": false,
+            "image": "/cources/digital-marketing.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Graphic Design",
+            "slug": "graphic-design",
+            "description": "Create stunning graphics with Adobe Photoshop and Illustrator",
+            "price": 149.99,
+            "instructor": "David Lee",
+            "isFeatured": true,
+            "image": "/cources/graphic-design.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Cooking Basics",
+            "slug": "cooking-basics",
+            "description": "Learn to cook delicious meals with this beginner's cooking course",
+            "price": 49.99,
+            "instructor": "Nancy Green",
+            "isFeatured": false,
+            "image": "/cources/cooking.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Personal Finance",
+            "slug": "personal-finance",
+            "description": "Manage your finances effectively with this comprehensive course",
+            "price": 79.99,
+            "instructor": "Chris Walker",
+            "isFeatured": true,
+            "image": "/cources/personal-finance.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Fitness Training",
+            "slug": "fitness-training",
+            "description": "Get fit and healthy with our expert-led fitness training course",
+            "price": 99.99,
+            "instructor": "Olivia Martinez",
+            "isFeatured": true,
+            "image": "/cources/fitness.jpg"
+        }
+    ]
+}
