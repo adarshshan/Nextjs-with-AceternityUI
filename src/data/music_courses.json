@@ -89,16 +89,6 @@
             "instructor": "Chris Walker",
             "isFeatured": true,
             "image": "/cources/personal-finance.jpg"
-        },
-        {
-            "id": 10,
-            "title": "Fitness Training",
-            "slug": "fitness-training",
-            "description": "Get fit and healthy with our expert-led fitness training course",
-            "price": 99.99,
-            "instructor": "Olivia Martinez",
-            "isFeatured": true,
-            "image": "/cources/fitness.jpg"
         }
     ]
 }

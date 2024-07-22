@@ -24,7 +24,6 @@ const HeroSection = () => {
                     </Link>
                 </div>
             </div>
-            HeroSection
         </div>
     )
 }

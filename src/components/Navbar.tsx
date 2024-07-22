@@ -11,9 +11,7 @@ const Navbar = ({ className }: { className?: string }) => {
             className={cn("fixed top-3 md:top-8 inset-x-0 max-w-2xl mx-auto z-50", className)} >
             <Menu setActive={setActive}>
                 <Link href={'/'}>
-                    <MenuItem setActive={setActive} active={active} item="Home">
-                        <HoveredLink href="/courses"> Cources</HoveredLink>
-                    </MenuItem>
+                    <MenuItem setActive={setActive} active={active} item="Home" />
                 </Link>
                 <MenuItem setActive={setActive} active={active} item="Our Cources">
                     <div className="flex flex-col space-y-8 text-sm">
@@ -25,7 +23,7 @@ const Navbar = ({ className }: { className?: string }) => {
                     </div>
                 </MenuItem>
                 <MenuItem setActive={setActive} active={active} item="Contact Us">
-                    <HoveredLink href="/courses"> Contact Us</HoveredLink>
+                    <HoveredLink href="/contact"> Contact Us</HoveredLink>
                 </MenuItem>
             </Menu>
         </div>

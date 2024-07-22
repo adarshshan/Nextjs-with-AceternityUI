@@ -38,6 +38,7 @@ const Footer = () => {
                     <p>7356899987</p>
                 </div>
             </div>
+            <p className='text-center text-xs mt-5'>@2024 Music School. All rights reserved.</p>
         </footer>
     )
 }
