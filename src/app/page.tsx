@@ -1,8 +1,8 @@
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
-import FeaturedCourses from "@/components/FeaturedCourses";
 import Footer from "@/components/Footer";
+import FeaturedCources from "@/components/FeaturedCources";
 import HeroSection from "@/components/HeroSection";
 import Instructors from "@/components/Instructors";
 import MusicSchoolTestimonials from "@/components/TestimonialCards";
@@ -55,7 +55,7 @@ function HomeContent() {
   return (
     <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <HeroSection />
-      <FeaturedCourses />
+      <FeaturedCources />
       <WhyChooseUs />
       <MusicSchoolTestimonials />
       <UpcomingWebinar />
