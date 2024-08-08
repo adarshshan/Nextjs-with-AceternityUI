@@ -39,7 +39,7 @@ export default function Home() {
   const fetchVideo = async (code: string) => {
     console.log('function is invoked......');
     try {
-      const { data } = await axios.get(`http://3.110.225.246:5000/api/v-uploader/${code}`);
+      const { data } = await axios.get(`https://www.sparekit.shop/api/v-uploader/${code}`);
       console.log(data);
       if (data.success) setVideoLink(data.videoData.videoLink);
       else console.log(data.message);
