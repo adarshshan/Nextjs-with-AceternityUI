@@ -11,6 +11,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import VideoPlayer from "@/components/VideoPlay";
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function HomeContent() {
   const [videoLink, setVideoLink] = useState<string | null>(null);
@@ -18,7 +19,15 @@ function HomeContent() {
   const searchParams = useSearchParams();
 
   const codeParam = searchParams.get('code');
-console.log(codeParam);console.log('this is the code..........');
+  const router = useRouter();
+  console.log(codeParam); console.log('this is the code..........');
+
+  useEffect(() => {
+    if (window.location.pathname.endsWith('/')) {
+      const newUrl = window.location.pathname.slice(0, -1) + window.location.search;
+      router.replace(newUrl, undefined, { shallow: true });
+    }
+  }, []);
   useEffect(() => {
     if (codeParam) fetchVideo(codeParam);
   }, [codeParam]);
