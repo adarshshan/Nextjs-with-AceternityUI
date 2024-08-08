@@ -24,24 +24,16 @@ export default function Home() {
   }, [])
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate how much the user has scrolled
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      // Get the total scrollable height of the document
       const documentHeight = document.documentElement.scrollHeight;
-      // Get the viewport height
       const windowHeight = window.innerHeight;
-      // Check if the user has scrolled down 20%
       if (scrollTop > documentHeight * 0.20 - windowHeight) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
-
-    // Attach the scroll event listener
     window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener on component unmount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const fetchVideo = async (code: string) => {
