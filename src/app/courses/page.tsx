@@ -4,7 +4,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import courceData from '@/data/music_courses.json'
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
 
 const Page = () => {
     return (
@@ -14,7 +13,7 @@ const Page = () => {
             </h1>
             <div className="flex flex-wrap justify-center">
                 {courceData.cources.map((cource: Course) => (
-                    <CardContainer className="inter-var m-4">
+                    <CardContainer key={Math.random()} className="inter-var m-4">
                         <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-2 border  ">
                             <CardItem
                                 translateZ="50"
