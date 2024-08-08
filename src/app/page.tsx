@@ -17,20 +17,21 @@ function HomeContent() {
   const [videoLink, setVideoLink] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const searchParams = useSearchParams();
-
-  const codeParam = searchParams.get('code');
   const router = useRouter();
   
-  console.log(codeParam); console.log('this is the code..........');
+  const codeParam = searchParams.get('code');
 
   useEffect(() => {
     if (window.location.pathname.endsWith('/')) {
       const newUrl = window.location.pathname.slice(0, -1) + window.location.search;
       router.replace(newUrl, undefined, { shallow: true });
     }
-  }, []);
+  }, [router]);
+
   useEffect(() => {
-    if (codeParam) fetchVideo(codeParam);
+    if (codeParam) {
+      fetchVideo(codeParam);
+    }
   }, [codeParam]);
 
   useEffect(() => {
@@ -38,11 +39,7 @@ function HomeContent() {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const documentHeight = document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
-      if (scrollTop > documentHeight * 0.20 - windowHeight) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(scrollTop > documentHeight * 0.20 - windowHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -52,16 +49,16 @@ function HomeContent() {
   const fetchVideo = async (code: string) => {
     try {
       const { data } = await axios.get(`https://www.sparekit.shop/api/v-uploader/${code}`);
-      console.log(data); console.log('this is the data.....');
       if (data.success) {
         setVideoLink(data.videoData.videoLink);
       } else {
-        console.log(`API error: ${data.message}`);
+        console.error(`API error: ${data.message}`);
       }
     } catch (error) {
       console.error('Error fetching video:', error);
     }
   };
+
   return (
     <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <HeroSection />
