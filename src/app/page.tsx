@@ -20,6 +20,7 @@ function HomeContent() {
 
   const codeParam = searchParams.get('code');
   const router = useRouter();
+  
   console.log(codeParam); console.log('this is the code..........');
 
   useEffect(() => {

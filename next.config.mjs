@@ -40,7 +40,7 @@ const nextConfig = {
             {
                 source: '/:path*/',
                 has: [{ type: 'query', key: 'code' }],
-                destination: '?code=:code',
+                destination: '/:path*?code=:code',
                 permanent: true,
             },
         ];
