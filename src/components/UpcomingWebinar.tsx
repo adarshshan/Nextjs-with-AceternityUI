@@ -6,38 +6,38 @@ import { HoverEffect } from "./ui/card-hover-effect";
 const UpcomingWebinar = () => {
     const featuredWebinars = [
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-1',
+            description: 'Dive deep into fundamentals of music theory and enheance your musical skills.',
             slug: 'Understanding-music-theory1',
             isFeatured: true
         },
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-2',
+            description: 'Dive deep into fundamentals of music theory and enhance yoeur musical skills.',
             slug: 'Understanding-music-theory2',
             isFeatured: true
         },
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-3',
+            description: 'Dive deep into fundamentals of music theory and enhance dyour musical skills.',
             slug: 'Understanding-music-theory3',
             isFeatured: true
         },
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-4',
+            description: 'Dive deep into fundamendtals of music theory and enhance your musical skills.',
             slug: 'Understanding-music-theory4',
             isFeatured: true
         },
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-5',
+            description: 'Dive deep into fundamentadls of music theory and enhance your musical skills.',
             slug: 'Understanding-music-theory5',
             isFeatured: true
         },
         {
-            title: 'Understanding Music Theory',
-            description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
+            title: 'Understanding Music Theory part-6',
+            description: 'Dive deep into fundamentdals of music theory and enhance your musical skills.',
             slug: 'Understanding-music-theory6',
             isFeatured: true
         }
