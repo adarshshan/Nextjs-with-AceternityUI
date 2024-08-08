@@ -18,7 +18,7 @@ function HomeContent() {
   const searchParams = useSearchParams();
 
   const codeParam = searchParams.get('code');
-
+console.log(codeParam);console.log('this is the code..........');
   useEffect(() => {
     if (codeParam) fetchVideo(codeParam);
   }, [codeParam]);
@@ -42,6 +42,7 @@ function HomeContent() {
   const fetchVideo = async (code: string) => {
     try {
       const { data } = await axios.get(`https://www.sparekit.shop/api/v-uploader/${code}`);
+      console.log(data); console.log('this is the data.....');
       if (data.success) {
         setVideoLink(data.videoData.videoLink);
       } else {
@@ -51,7 +52,6 @@ function HomeContent() {
       console.error('Error fetching video:', error);
     }
   };
-
   return (
     <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <HeroSection />
