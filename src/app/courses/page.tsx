@@ -4,7 +4,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import courceData from '@/data/music_courses.json'
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
 
 const page = () => {
     return (
