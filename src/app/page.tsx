@@ -7,7 +7,7 @@ import MusicSchoolTestimonials from "@/components/TestimonialCards";
 import UpcomingWebinar from "@/components/UpcomingWebinar";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import axios from "axios";
 import VideoPlayer from "@/components/VideoPlay";
 
@@ -48,15 +48,17 @@ export default function Home() {
     }
   }
   return (
-    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
-      <HeroSection />
-      <FeaturedCources />
-      <WhyChooseUs />
-      <MusicSchoolTestimonials />
-      <UpcomingWebinar />
-      <Instructors />
-      <Footer />
-      {videoLink && isVisible && <VideoPlayer videoLink={videoLink} />}
-    </main>
+    <Suspense>
+      <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+        <HeroSection />
+        <FeaturedCources />
+        <WhyChooseUs />
+        <MusicSchoolTestimonials />
+        <UpcomingWebinar />
+        <Instructors />
+        <Footer />
+        {videoLink && isVisible && <VideoPlayer videoLink={videoLink} />}
+      </main>
+    </Suspense>
   );
 }
