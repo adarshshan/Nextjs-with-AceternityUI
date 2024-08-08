@@ -8,37 +8,37 @@ const UpcomingWebinar = () => {
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory1',
             isFeatured: true
         },
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory2',
             isFeatured: true
         },
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory3',
             isFeatured: true
         },
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory4',
             isFeatured: true
         },
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory5',
             isFeatured: true
         },
         {
             title: 'Understanding Music Theory',
             description: 'Dive deep into fundamentals of music theory and enhance your musical skills.',
-            slug: 'Understanding-music-theory',
+            slug: 'Understanding-music-theory6',
             isFeatured: true
         }
     ]
@@ -56,7 +56,7 @@ const UpcomingWebinar = () => {
                         {
                             title: webinar.title,
                             description: webinar.description,
-                            link: '/'
+                            link: `/webinars/${webinar.slug}`
                         }
                     ))} />
                 </div>
