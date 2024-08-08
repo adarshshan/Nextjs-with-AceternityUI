@@ -8,6 +8,7 @@ export const HoverEffect = ({
     className,
 }: {
     items: {
+        key: string;
         title: string;
         description: string;
         link: string;
