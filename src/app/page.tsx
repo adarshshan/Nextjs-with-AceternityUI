@@ -18,14 +18,18 @@ function HomeContent() {
   const [isVisible, setIsVisible] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   const codeParam = searchParams.get('code');
 
   useEffect(() => {
-    if (window.location.pathname.endsWith('/')) {
-      const newUrl = window.location.pathname.slice(0, -1) + window.location.search;
-      router.replace(newUrl, undefined, { shallow: true });
-    }
+    const addQueryParam = () => {
+      const query = { ...router.query, newParam: 'newValue' };
+      router.push({
+        pathname: router.pathname,
+        query: query,
+      }, undefined, { shallow: true });
+    };
+    addQueryParam();
   }, [router]);
 
   useEffect(() => {
