@@ -2,7 +2,7 @@
 import React from 'react'
 import { Meteors } from "@/components/ui/meteors";
 
-const page = () => {
+const Page = () => {
     return (
         <div className='w-full pt-32 min-h-screen '>
             <div className="flex justify-center text-center">
@@ -24,4 +24,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
