@@ -1,8 +1,10 @@
 'use client'
 import { IoIosPause, IoMdClose } from "react-icons/io";
 
-import React, { useState } from 'react';
-import { AiOutlineExpandAlt } from "react-icons/ai";
+import React, { useRef, useState } from 'react';
+import { AiFillSchedule, AiOutlineExpandAlt } from "react-icons/ai";
+import { VscDebugStart } from "react-icons/vsc";
+import { FaCompressAlt } from "react-icons/fa";
 
 interface IVideoPlayerProps {
     videoLink: string;
@@ -11,27 +13,48 @@ interface IVideoPlayerProps {
 
 const VideoPlayer: React.FC<IVideoPlayerProps> = ({ videoLink, position }) => {
     const [isVisible, setIsVisible] = useState(true);
-    const [width,setWidth]=useState(48);
-    const [height,setHeight]=useState(40)
+    const [width, setWidth] = useState('40');
+    const [height, setHeight] = useState('60')
+    const [isPaused, setIsPaused] = useState(false);
+    const [expand, setExpand] = useState(false);
+
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const handleClose = () => {
         setIsVisible(false);
     };
-    const handleLeftClick = () => { }
+    const pauseVideo = () => {
+        if (videoRef.current) {
+            if (isPaused) {
+                videoRef.current.play();
+            } else {
+                videoRef.current.pause();
+            }
+            setIsPaused(!isPaused);
+        }
+    };
     const maximise = () => {
-        setWidth(96);
-        setHeight(96)
-     }
+        if (expand) {
+            setWidth('40');
+            setHeight('60')
+            setExpand(false);
+        } else {
+            setWidth('96');
+            setHeight('4/5')
+            setExpand(true)
+        }
+    }
 
     if (!isVisible) return null;
 
     return (
         <>
             <div
-                className={`fixed ${position === 'bottom-right' ? "bottom-10 right-10" : "bottom-10 left-10"} w-${width} h-${height} z-50 border-4 border-gray-500 rounded-2xl`}
+                className={`fixed ${position === 'bottom-right' ? "bottom-10 right-10" : "bottom-10 left-10"}  md:w-${width} md:h-${height} z-50 border-4 border-gray-500 rounded-2xl`}
             >
                 <div className="relative w-full h-full">
                     <video
+                        ref={videoRef}
                         className="w-full h-full rounded-2xl object-cover"
                         src={videoLink}
                         autoPlay
@@ -46,19 +69,26 @@ const VideoPlayer: React.FC<IVideoPlayerProps> = ({ videoLink, position }) => {
                         <IoMdClose className="text-xl" />
                     </button>
                     <button
-                        onClick={handleLeftClick}
+                        onClick={pauseVideo}
                         className="absolute bottom-2 left-2 text-gray-700 rounded-full p-1 text-2xl hover:text-3xl z-50"
                     >
-                        <IoIosPause />
+                        {isPaused ? <IoIosPause /> : <VscDebugStart />}
                     </button>
                     <button
                         onClick={maximise}
                         className="absolute bottom-2 right-2 text-gray-600 rounded-full p-1 text-2xl hover:text-3xl z-50"
                     >
-                        <AiOutlineExpandAlt />
+                        {expand ? <FaCompressAlt /> : <AiOutlineExpandAlt />}
                     </button>
+                    
+                    {expand && < div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
+                        <button className="bg-gray-800 text-xl text-white rounded-full p-3 flex">
+                            <AiFillSchedule />Schedule a call
+                        </button>
+                    </div>}
+
                 </div>
-            </div>
+            </div >
         </>
     );
 };
