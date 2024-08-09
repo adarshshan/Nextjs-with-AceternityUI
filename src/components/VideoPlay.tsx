@@ -50,7 +50,7 @@ const VideoPlayer: React.FC<IVideoPlayerProps> = ({ videoLink, position }) => {
     return (
         <>
             <div
-                className={`fixed ${position === 'bottom-right' ? "bottom-10 right-10" : "bottom-10 left-10"}  md:w-${width} md:h-${height} z-50 border-4 border-gray-500 rounded-2xl`}
+                className={`fixed ${position === 'bottom-right' ? "bottom-10 right-10" : "bottom-10 left-10"} w-40 h-60  md:w-${width} md:h-${height} z-50 border-4 border-gray-500 rounded-2xl`}
             >
                 <div className="relative w-full h-full">
                     <video
@@ -80,7 +80,7 @@ const VideoPlayer: React.FC<IVideoPlayerProps> = ({ videoLink, position }) => {
                     >
                         {expand ? <FaCompressAlt /> : <AiOutlineExpandAlt />}
                     </button>
-                    
+
                     {expand && < div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
                         <button className="bg-gray-800 text-xl text-white rounded-full p-3 flex">
                             <AiFillSchedule />Schedule a call
