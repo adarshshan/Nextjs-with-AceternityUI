@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: false,
     images: {
         remotePatterns: [
             {
@@ -34,16 +33,6 @@ const nextConfig = {
                 pathname: '/**'
             }
         ]
-    },
-    async redirects() {
-        return [
-            {
-                source: '/:path*/',
-                has: [{ type: 'query', key: 'code' }],
-                destination: '/:path*?code=:code',
-                permanent: true,
-            },
-        ];
     }
 };
 

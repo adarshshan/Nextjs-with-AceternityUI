@@ -11,26 +11,15 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import VideoPlayer from "@/components/VideoPlay";
 import { useSearchParams } from 'next/navigation';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 
 function HomeContent() {
   const [videoLink, setVideoLink] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [position,setPosition]=useState('bottom-right');
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const codeParam = searchParams.get('code');
 
-  useEffect(() => {
-    const addQueryParam = () => {
-      const query = { ...router.query, newParam: 'newValue' };
-      router.push({
-        pathname: router.pathname,
-        query: query,
-      }, undefined, { shallow: true });
-    };
-    addQueryParam();
-  }, [router]);
 
   useEffect(() => {
     if (codeParam) {
@@ -55,6 +44,7 @@ function HomeContent() {
       const { data } = await axios.get(`https://www.sparekit.shop/api/v-uploader/${code}`);
       if (data.success) {
         setVideoLink(data.videoData.videoLink);
+        setPosition(data.videoData.position)
       } else {
         console.error(`API error: ${data.message}`);
       }
@@ -72,7 +62,7 @@ function HomeContent() {
       <UpcomingWebinar />
       <Instructors />
       <Footer />
-      {videoLink && isVisible && <VideoPlayer videoLink={videoLink} />}
+      {videoLink && isVisible && <VideoPlayer position={position} videoLink={videoLink} />}
     </main>
   );
 }
